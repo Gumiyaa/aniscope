@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.*
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+
+# Legacy root-level pages/styles/assets from the first draft.
+# The active app lives in views/ and public/.
+/*.html
+/styles.css
+/assets/
+/REBUILD_SPEC_PAGE4.md
