@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{TITLE}}</title>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Jost:ital,wght@0,300..700;1,300..700&family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/base.css">
+  <style>
+    .notfound {
+      text-align: center;
+      padding: 96px 0 120px;
+    }
+    .notfound__code {
+      font-family: var(--display);
+      font-size: clamp(84px, 18vw, 200px);
+      line-height: 1;
+      color: var(--red);
+      margin: 0;
+    }
+    .notfound__jp {
+      margin: 8px 0 0;
+      font-family: var(--sans);
+      font-size: 12px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--muted-2);
+    }
+    .notfound__title {
+      font-family: var(--display);
+      font-size: clamp(26px, 4vw, 40px);
+      color: var(--ink);
+      margin: 24px 0 0;
+    }
+    .notfound__text {
+      max-width: 46ch;
+      margin: 14px auto 0;
+      color: var(--muted);
+    }
+    .notfound__links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px 28px;
+      margin-top: 34px;
+      font-family: var(--sans);
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .notfound__links a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 3px;
+    }
+    .notfound__links a:hover {
+      color: var(--red);
+      border-color: var(--red);
+    }
+  </style>
+</head>
+<body class="page-404">
+  {{HEADER}}
+
+  <main class="wrap notfound">
+    <p class="notfound__code">404</p>
+    <p class="notfound__jp">Page not found / ページが見つかりません</p>
+    <h1 class="notfound__title">This page has left the archive.</h1>
+    <p class="notfound__text">The address you followed does not match any issue, essay, or review in the AniScope ledger. It may have been moved, or it may never have existed.</p>
+    <nav class="notfound__links" aria-label="Recovery links">
+      <a href="/">Home</a>
+      <a href="/reviews">Reviews</a>
+      <a href="/explore">Explore</a>
+      <a href="/essays">Essays</a>
+      <a href="/community">Community</a>
+    </nav>
+  </main>
+
+  {{FOOTER}}
+</body>
+</html>

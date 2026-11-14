@@ -98,6 +98,7 @@ Aniscope/
 │  ├─ partials/
 │  │  ├─ header.html
 │  │  └─ footer.html
+│  ├─ 404.html               # Not-found page
 │  ├─ index.html             # Home / Features
 │  ├─ reviews.html
 │  ├─ explore.html
@@ -159,6 +160,8 @@ npm start
 | `http://localhost:5000/explore` | `views/explore.html` |
 | `http://localhost:5000/essays` | `views/essays.html` |
 | `http://localhost:5000/community` | `views/community.html` |
+
+Any other URL renders `views/404.html` with a `404` status.
 
 ---
 

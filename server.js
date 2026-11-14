@@ -5,6 +5,7 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+app.disable('x-powered-by');
 app.use(express.static(path.join(__dirname, 'public')));
 
 const partials = {
@@ -33,5 +34,9 @@ const routes = {
 for (const [route, [file, title]] of Object.entries(routes)) {
   app.get(route, (req, res) => res.send(render(file, title)));
 }
+
+app.use((req, res) => {
+  res.status(404).send(render('404.html', 'Page Not Found — AniScope'));
+});
 
 app.listen(PORT, () => console.log(`AniScope running at http://localhost:${PORT}`));
