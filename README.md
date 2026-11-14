@@ -124,7 +124,7 @@ Aniscope/
 └─ README.md
 ```
 
-`views/*.html` are read on every request. The shared header/footer partials are cached at server startup, so restart the server after editing those partials.
+`views/*.html` and the shared partials are read on every request, so template edits show up on refresh without restarting the server.
 
 ---
 
