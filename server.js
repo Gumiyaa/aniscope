@@ -8,17 +8,16 @@ const PORT = process.env.PORT || 5000;
 app.disable('x-powered-by');
 app.use(express.static(path.join(__dirname, 'public')));
 
-const partials = {
-  header: fs.readFileSync(path.join(__dirname, 'views/partials/header.html'), 'utf8'),
-  footer: fs.readFileSync(path.join(__dirname, 'views/partials/footer.html'), 'utf8'),
-};
+function readPartial(name) {
+  return fs.readFileSync(path.join(__dirname, 'views/partials', name + '.html'), 'utf8');
+}
 
 function render(file, title) {
   let html = fs.readFileSync(path.join(__dirname, 'views', file), 'utf8');
   html = html
     .replace('{{TITLE}}', title)
-    .replace('{{HEADER}}', partials.header)
-    .replace('{{FOOTER}}', partials.footer);
+    .replace('{{HEADER}}', readPartial('header'))
+    .replace('{{FOOTER}}', readPartial('footer'));
   return html;
 }
 
