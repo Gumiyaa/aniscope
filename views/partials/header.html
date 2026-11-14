@@ -32,13 +32,22 @@
     </nav>
 
     <div class="head-tools">
-      <button class="tool tool--search" type="button">
+      <button class="tool tool--search" type="button" data-action="search" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></svg>
         <span>探す</span>
       </button>
-      <button class="tool tool--edition" type="button" aria-label="Edition">HK</button>
-      <button class="tool tool--icon" type="button" aria-label="Saved articles">
+      <details class="head-menu">
+        <summary class="tool tool--edition" aria-label="Edition">HK</summary>
+        <div class="head-menu__panel">
+          <p class="head-menu__label">Current issue / 通巻</p>
+          <p class="head-menu__issue">No. 28 · Spring 2025</p>
+          <p class="head-menu__meta">Tokyo &amp; Kyoto Archive</p>
+          <a href="/explore">Browse the catalogue →</a>
+        </div>
+      </details>
+      <button class="tool tool--icon tool--saved" type="button" data-action="saved" aria-label="Saved articles" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5h12v17l-6-4.2-6 4.2z"/></svg>
+        <span class="tool__count" hidden>0</span>
       </button>
       <a class="avatar" href="/community" aria-label="Member account">
         <img src="/assets/avatar.jpg" alt="">
@@ -47,3 +56,24 @@
     </div>
   </div>
 </header>
+
+<dialog class="panel" id="search-dialog" aria-label="Search AniScope">
+  <div class="panel__head">
+    <span class="panel__label">Search / 検索</span>
+    <button class="panel__close" type="button" data-close aria-label="Close search">×</button>
+  </div>
+  <input class="panel__input" id="search-input" type="search" placeholder="Frieren, Evangelion, essays…" autocomplete="off" aria-label="Search query">
+  <div class="panel__body" id="search-results">
+    <p class="panel__hint">Search titles, essays, and catalogue entries.</p>
+  </div>
+</dialog>
+
+<dialog class="panel" id="saved-dialog" aria-label="Saved articles">
+  <div class="panel__head">
+    <span class="panel__label">Saved / 保存</span>
+    <button class="panel__close" type="button" data-close aria-label="Close saved list">×</button>
+  </div>
+  <div class="panel__body" id="saved-list">
+    <p class="panel__hint">Nothing saved yet — tap the bookmark icon on a review or catalogue entry.</p>
+  </div>
+</dialog>

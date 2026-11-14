@@ -67,7 +67,7 @@ Click any thumbnail to open the full-page capture.
 - **Typography:** Bodoni Moda for display, Newsreader for long-form serif text, Jost for UI/sans details, and Noto Serif/Sans JP for Japanese lines.
 - **Layout:** a 1284px desktop artboard translated into responsive CSS grids, with editorial rules, kickers, marginalia, and dense metadata.
 - **Artwork:** real anime key visuals and posters, cropped to the exact dimensions of the original design slots so the layout does not shift.
-- **Interaction:** vanilla JavaScript for active navigation, filter/tab states, form feedback, and image fades.
+- **Interaction:** vanilla JavaScript for active navigation, filter/tab states, form feedback, image fades, full-text search, and locally saved articles.
 
 ---
 
@@ -120,6 +120,7 @@ Aniscope/
 ├─ docs/
 │  ├─ screenshots/           # full-page captures + thumbnails
 │  └─ jojo-meme.jpg
+├─ test.js                   # route + search-index smoke test
 └─ README.md
 ```
 
@@ -160,8 +161,23 @@ npm start
 | `http://localhost:5000/explore` | `views/explore.html` |
 | `http://localhost:5000/essays` | `views/essays.html` |
 | `http://localhost:5000/community` | `views/community.html` |
+| `http://localhost:5000/search-index.json` | JSON index powering the header search |
 
 Any other URL renders `views/404.html` with a `404` status.
+
+### Header search and saved articles
+
+- **Search** (or `Ctrl`/`Cmd` + `K`) opens a dialog that searches a server-generated index of all five pages at `/search-index.json`.
+- **Bookmark** icons on the review and catalogue entries save items to `localStorage`; the header bookmark button opens the saved list with a count badge.
+- The **HK** edition button opens a small issue panel linking to the catalogue.
+
+### Checks
+
+```bash
+npm test
+```
+
+Starts the app on a random port, requests every route, verifies the 404 page, and validates the search index.
 
 ---
 
